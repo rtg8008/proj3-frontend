@@ -17,7 +17,7 @@ function AddMissionEquipmentPage() {//app below
   const [categories, setCategories] = useState([{name: ''}])
   const [subcategories, setSubcategories] = useState([{name: ''}])
   const [results, setResults] = useState({equipment: [], statement: ''})
-  const missionURL = 'http://localhost:8080/mission/' + letParams.missionId
+  const missionURL = 'https://proj3-backend-wegmans.herokuapp.com/mission/' + letParams.missionId
 
 
   const nav = useNavigate();
@@ -42,19 +42,19 @@ function AddMissionEquipmentPage() {//app below
   //   )
   // },[])
   useEffect(() => {
-    fetch('http://localhost:8080/equipment')
+    fetch('https://proj3-backend-wegmans.herokuapp.com/equipment')
     .then(res => res.json())
     .then(data => {
       console.log(data)
       setEquipmentData(data)}
     )
-    fetch('http://localhost:8080/category')
+    fetch('https://proj3-backend-wegmans.herokuapp.com/category')
     .then(res => res.json())
     .then(data => {
       console.log(data)
       setCategories(data)}
     )
-    fetch('http://localhost:8080/subcategory')
+    fetch('https://proj3-backend-wegmans.herokuapp.com/subcategory')
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -69,7 +69,7 @@ function AddMissionEquipmentPage() {//app below
   
   const searchByCategory = (category) => {
     console.log(`searching by category: `, category);
-    fetch(`http://localhost:8080/equipment/category/${category}`)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/equipment/category/${category}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -79,7 +79,7 @@ function AddMissionEquipmentPage() {//app below
   }
   const searchBySubcategory = (subcategory) => {
     console.log(`searching by subcat`, subcategory)
-    fetch(`http://localhost:8080/equipment/subcategory/${subcategory}`)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/equipment/subcategory/${subcategory}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -100,7 +100,7 @@ function AddMissionEquipmentPage() {//app below
         } 
       )
     }
-    fetch(`http://localhost:8080/mission/${letParams.missionId}?equipment_id=${equipmentID}&operation=update`, init)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/mission/${letParams.missionId}?equipment_id=${equipmentID}&operation=update`, init)
     .then(res => res.json())
     .then(data => {
       console.log(data);
@@ -124,7 +124,7 @@ function AddMissionEquipmentPage() {//app below
         } 
       )
     }
-    fetch(`http://localhost:8080/mission/${letParams.missionId}?equipment_id=${equipmentID}&operation=add`, init)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/mission/${letParams.missionId}?equipment_id=${equipmentID}&operation=add`, init)
     .then(res => res.json())
     .then(data => {
       console.log(data);

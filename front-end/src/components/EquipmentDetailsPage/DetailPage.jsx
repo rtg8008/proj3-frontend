@@ -11,7 +11,7 @@ function DetailPage() {
   const [equipment, setEquipment] = useState({})
   const [finishedLoading, setFinishedLoading] = useState(false)
   useEffect(() => {
-    fetch(`http://localhost:8080/equipment/${id}`)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/equipment/${id}`)
     .then(res => res.json())
     .then(data => {
       setEquipment(data)

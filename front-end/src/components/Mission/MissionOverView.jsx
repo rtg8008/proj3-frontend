@@ -12,7 +12,7 @@ function MissionOverView() {//app below
   const letParams = useParams();
   const nav = useNavigate();
   const [results, setResults] = useState({equipment: [], statement: ''})
-  const missionURL = 'http://localhost:8080/mission/' + letParams.missionId
+  const missionURL = 'https://proj3-backend-wegmans.herokuapp.com/mission/' + letParams.missionId
   const deleteSelf = () => {
     // eslint-disable-next-line no-restricted-globals
     if (confirm('Are you sure you want to delete this mission? This action is irreversible')){
@@ -36,7 +36,7 @@ function MissionOverView() {//app below
       },
   
     }
-    fetch(`http://localhost:8080/mission_equipment/${mission_equipment_id}`, init)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/mission_equipment/${mission_equipment_id}`, init)
     .then(res => res.json())
     .then(data => {
       console.log(data);
@@ -88,7 +88,7 @@ function MissionOverView() {//app below
     console.log(init);
     console.log(results.equipment);
 
-    fetch(`http://localhost:8080/mission_equipment/${id}`, init)
+    fetch(`https://proj3-backend-wegmans.herokuapp.com/mission_equipment/${id}`, init)
     .then(res => res.json())
     .then(data => {
       console.log('http response', data);

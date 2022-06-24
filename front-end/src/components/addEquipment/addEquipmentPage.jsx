@@ -33,7 +33,7 @@ const AddEquipmentPage = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:8080/subcategory')
+    fetch('https://proj3-backend-wegmans.herokuapp.com/subcategory')
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -60,7 +60,7 @@ const AddEquipmentPage = () => {
           },
           body: JSON.stringify(data)
         }
-        fetch('http://localhost:8080/equipment', init)
+        fetch('https://proj3-backend-wegmans.herokuapp.com/equipment', init)
         .then(res => res.json())
         .then(data => {
           console.log('Equipment now in Database: ', data);

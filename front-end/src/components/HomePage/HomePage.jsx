@@ -32,7 +32,7 @@ const HomePage = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:8080/mission/')
+    fetch('https://proj3-backend-wegmans.herokuapp.com/mission/')
     .then(res => res.json())
     .then(data => setResults(data))
   },[])
@@ -53,7 +53,7 @@ const HomePage = () => {
                             location_lat: parseFloat(lat),
                             location_long: parseFloat(lon)})
     }
-    fetch('http://localhost:8080/mission', init)
+    fetch('https://proj3-backend-wegmans.herokuapp.com/mission', init)
     .then(res => res.json())
     .then(data => {
       console.log(data);
